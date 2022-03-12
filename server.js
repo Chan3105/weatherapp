@@ -4,7 +4,6 @@ const request = require('request');
 const app = express()
 
 const apiKey = 'd59386325742d2c866abc49ad411f869';
-// console.log(apiKey.key);
 
 
 app.use(express.static('public'));
@@ -27,8 +26,8 @@ app.post('/', function (req, res) {
       if(weather.main == undefined){
         res.render('index', {weather: null, error: 'Error, please try again'});
       } else {
-        let weatherText = `It's ${(weather.main.temp - 32) * 5 / 9} degrees in ${weather.name}!`;
-        let weatherTextExpanded = `It's ${weather.main.temp} degrees, with
+        let weatherText = `It's ${Math.round((weather.main.temp -32)*5/9,2)}°C in ${weather.name}!`;
+        let weatherTextExpanded = `It's ${Math.round((weather.main.temp -32)*5/9,2)} °C, with
           ${weather.main.humidity}% humidity in ${weather.name}!`;
         res.render('index', {weather: weatherTextExpanded, error: null});
       }
@@ -36,7 +35,6 @@ app.post('/', function (req, res) {
   });
 })
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+app.listen(8080, function () {
+  console.log('The Weather App is live now!')
 })
-

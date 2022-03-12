@@ -5,13 +5,36 @@
     <title>Test</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <style>
+      body {
+        background-image: url(https://media.istockphoto.com/photos/dramatic-sunset-and-sunrise-sky-nature-background-with-white-clouds-picture-id1208368568?b=1&k=20&m=1208368568&s=170667a&w=0&h=dJisb26BvXQTkQnpKDxM1dxY7ftResj56ntJgPw2arc=);
+        background-position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 230px;
+      }
+
+      #box {
+        border: 2px solid darkblue;
+        padding: 100px 100px;
+        background-color: white;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <fieldset>
+      <!-- <fieldset> -->
+        <div id="box">
         <form action="/" method="post">
-          <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
-          <input type="submit" class="ghost-button" value="Get Weather">
+          <input name="city" type="text" class="inputcity" placeholder="Enter a City" required>
+          <input type="submit" class="submitbutton" value="Get Weather">
         </form>
         <% if(weather !== null){ %>
           <h3><%= weather %></h3>
@@ -20,7 +43,8 @@
         <% if(error !== null){ %>
           <p><%= error %></p>
         <% } %>
-      </fieldset>
+      <!-- </fieldset> -->
     </div>
+  </div>
   </body>
 </html>

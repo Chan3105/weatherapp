@@ -35,6 +35,6 @@ app.post('/', function (req, res) {
   });
 })
 
-server.listen(port,() => {
+app.listen(port,() => {
   console.log(`Server running at port `+port);
 });

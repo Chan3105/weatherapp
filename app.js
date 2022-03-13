@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
 const app = express()
-
+const port = process.env.PORT || 3000
 const apiKey = 'd59386325742d2c866abc49ad411f869';
 
 
@@ -35,6 +35,6 @@ app.post('/', function (req, res) {
   });
 })
 
-app.listen(8080, function () {
-  console.log('The Weather App is live now!')
-})
+server.listen(port,() => {
+  console.log(`Server running at port `+port);
+});
